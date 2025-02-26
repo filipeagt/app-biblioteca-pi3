@@ -1,0 +1,80 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#212529">
+  <title>Biblioteca Social</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" sizes="192x192" href="img/android-chrome-192x192.png">
+</head>
+<body onload="getLivros()">
+  <header class="bg-dark text-white py-3 sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <div class="d-flex justify-content-start align-items-center">
+          <a href="index.html" class="me-1"><img src="img/favicon.ico" alt="logo" id="logo"></a>
+          <a class="navbar-brand" href="index.html">Biblioteca Social</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="livros.html">Livros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="autores.html">Autores</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"  onclick="listaGeneros()">
+                Gêneros
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-generos">
+                <li><a class="dropdown-item" href="#">...</a></li>
+                
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex ms-auto">
+            <input class="form-control me-2" type="search" placeholder="Livro, autor ou gênero" aria-label="Search" id="pesquisa" onkeydown="seenter(event)">
+            <button class="btn btn-warning" onclick="pesquisar()" id="btn-pesquisa">Pesquisar</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-4" id="main">
+    <section id="book-list">
+      <h1>Livros</h1>
+      <div class="row">
+        <!-- Livros serão adicionados aqui via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Paginação -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled" id="previous-page">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+        </li>
+        <li class="page-item active" aria-current="page" id="page-1"><a class="page-link" href="#" data-page="1">1</a></li>
+        
+        <li class="page-item" id="next-page">
+          <a class="page-link" href="#" data-page="2">Próxima</a>
+        </li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="bg-light text-center py-3" id="footer">
+    <p>&copy; 2025 Biblioteca Social de Capela do Alto.</p>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
